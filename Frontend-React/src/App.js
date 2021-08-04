@@ -16,7 +16,7 @@ const getjobs=()=>{
  const [joblist, setJoblist] = useState([]);
   const deleteuser = (id)=>{
 
-    fetch('http://localhost:8000/api/jobsDelete/'+id,
+    fetch('http://localhost:8000/api/deleteJobs/'+id,
     {
         method: "DELETE",
     }).then((result)=>{
@@ -41,7 +41,7 @@ const getjobs=()=>{
     })
   }
   const updateJob=(id,editJob)=>{
-    fetch('http://localhost:8000/api/jobsUpdate/'+id, {
+    fetch('http://localhost:8000/api/updateJobs/'+id, {
         method: "Post",
         headers:{
             'Content-Type':'application/json'
@@ -68,7 +68,7 @@ const getjobs=()=>{
 const [employeeList, setEmployeeList] = useState([]);
 
 const getEmployeeData=()=>{
-  fetch("http://localhost:8000/api/getAllEmployee").then((response)=>{
+  fetch("http://localhost:8000/api/allEmployee").then((response)=>{
     response.json().then((result)=>{
       setEmployeeList(result);
     })
@@ -76,7 +76,7 @@ const getEmployeeData=()=>{
 }
 
 const addEmployee=(newUser)=>{
-  fetch('http://localhost:8000/api/createNewEmp', {
+  fetch('http://localhost:8000/api/createEmp', {
       method: "Post",
       headers:{
           'Content-Type':'application/json'
@@ -107,7 +107,7 @@ const updateEmployee=(id,editedUser)=>{
 }
 
 useEffect(() => {
-  fetch("http://localhost:8000/api/getAllEmployee").then((response)=>{
+  fetch("http://localhost:8000/api/allEmployee").then((response)=>{
     response.json().then((result)=>{
       setEmployeeList(result);
     })
