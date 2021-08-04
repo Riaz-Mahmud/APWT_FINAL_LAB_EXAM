@@ -30,7 +30,6 @@ const CreateEmployee = ({status, addEmployeeCallback, updateEmployeeCallback})=>
                  name:result.name,
                  username:result.username,
                  password:result.password,
-
               })
         })
     })
@@ -44,7 +43,7 @@ const CreateEmployee = ({status, addEmployeeCallback, updateEmployeeCallback})=>
                 <label >Name</label>
                 <input type='text' name='name' value={employee.name} onChange={handleInputChange} /> <br />
                 <label >Name</label>
-                <input type='text' name='contact_no'  value={employee.contact_no} onChange={handleInputChange} /> <br/>
+                <input type='number' name='contact_no'  value={employee.contact_no} onChange={handleInputChange} /> <br/>
                 <label >Name</label>
                 <input type='text' name='company_name' value={employee.company_name} onChange={handleInputChange} /> <br/>
                 <label >Name</label>

@@ -17,46 +17,42 @@ const getjobs=()=>{
   const deleteuser = (id)=>{
 
     fetch('http://localhost:8000/api/jobsDelete/'+id,
-        {
-            method: "DELETE",
-        }).then((result)=>{
-            result.json().then((resp)=>{
-                alert("Job has heen Deleted")
-                getjobs()
-            })
+    {
+        method: "DELETE",
+    }).then((result)=>{
+        result.json().then((resp)=>{
+            alert("Job has heen Deleted")
+            getjobs()
         })
+    })
   }
   const addNewJob=(newJob)=>{
     fetch('http://localhost:8000/api/jobs', {
-                          method: "Post",
-                          headers:{
-                              'Content-Type':'application/json'
-                          },
-                          body: JSON.stringify(newJob)
-                      }).then((result)=>{
-                          result.json().then((resp)=>{
-                              alert("Job has heen added")
-                              getjobs()
-                          })
-                      })
+        method: "Post",
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify(newJob)
+    }).then((result)=>{
+        result.json().then((resp)=>{
+            alert("Job has heen added")
+            getjobs()
+        })
+    })
   }
   const updateJob=(id,editJob)=>{
     fetch('http://localhost:8000/api/jobsUpdate/'+id, {
-            method: "Post",
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify(editJob)
-        }).then((result)=>{
-            result.json().then((resp)=>{
-                alert("Job has heen edited")
-                getjobs()
-            })
-        });
-
-        
-
-    
+        method: "Post",
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify(editJob)
+    }).then((result)=>{
+        result.json().then((resp)=>{
+            alert("Job has heen edited")
+            getjobs()
+        })
+    });
   }
   
   useEffect(() => {
@@ -81,34 +77,33 @@ const getEmployeeData=()=>{
 
 const addEmployee=(newUser)=>{
   fetch('http://localhost:8000/api/createNewEmp', {
-                        method: "Post",
-                        headers:{
-                            'Content-Type':'application/json'
-                        },
-                        body: JSON.stringify(newUser)
-                    }).then((result)=>{
-                        result.json().then((resp)=>{
-                            alert("employee has heen added")
-                            getEmployeeData()
-                        })
-                    })
+      method: "Post",
+      headers:{
+          'Content-Type':'application/json'
+      },
+      body: JSON.stringify(newUser)
+  }).then((result)=>{
+      result.json().then((resp)=>{
+          alert("employee has heen added")
+          getEmployeeData()
+      })
+  })
 }
 
 
 const updateEmployee=(id,editedUser)=>{
   fetch('http://localhost:8000/api/editEmp/'+id, {
-          method: "PUT",
-          headers:{
-              'Content-Type':'application/json'
-          },
-          body: JSON.stringify(editedUser)
-      }).then((result)=>{
-          result.json().then((resp)=>{
-              alert(" employee has heen edited")
-              getEmployeeData()
-          })
-      });
- 
+      method: "PUT",
+      headers:{
+          'Content-Type':'application/json'
+      },
+      body: JSON.stringify(editedUser)
+  }).then((result)=>{
+      result.json().then((resp)=>{
+          alert(" employee has heen edited")
+          getEmployeeData()
+      })
+  });
 }
 
 useEffect(() => {

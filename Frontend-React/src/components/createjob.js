@@ -29,8 +29,6 @@ const Createjobs = ({status, addjobCallback, updatejobCallback})=>{
                 title:result.title,
                 location:result.location,
                 salary:result.salary,
-                 
-
               })
         })
     })
@@ -47,8 +45,7 @@ const Createjobs = ({status, addjobCallback, updatejobCallback})=>{
                 <label >Location</label>
                 <input type='text' name='location' value={job.location} onChange={handleInputChange} /> <br />
                 <label >Salary</label>
-                <input type='text' name='salary' value={job.salary} onChange={handleInputChange} /> <br />
-                
+                <input type='number' name='salary' value={job.salary} onChange={handleInputChange} /> <br />
                 
                 <input type='submit' value={status==='add'?'Create':'Update'}/>
             </form>
